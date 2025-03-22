@@ -16,7 +16,7 @@ app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')  # Use environment vari
 mail = Mail(app)
 
 # Configure OpenAI API key
-openai.api_key = 'your_openai_api_key'
+#openai.api_key = 'your_openai_api_key'
 
 # Ensure static folder is correctly configured
 @app.route('/static/<path:filename>')
