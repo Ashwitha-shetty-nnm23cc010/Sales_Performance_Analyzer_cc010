@@ -3,7 +3,7 @@ from flask_mail import Mail, Message
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
 #import openai
-import requests  # Add this import for sending SMS
+#import requests  # Add this import for sending SMS
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
