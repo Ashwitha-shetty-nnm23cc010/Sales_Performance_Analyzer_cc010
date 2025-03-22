@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sales Performance Analyser{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Sales Performance Analyser</h1>
+    </header>
+    <nav>
+        {% if 'user_id' in session %}
+            <!-- Links visible when logged in -->
+            <a href="{{ url_for('home') }}">Dashboard</a>
+            <a href="{{ url_for('add_product') }}">Add Product</a>
+            <a href="{{ url_for('add_sales') }}">Add Sales</a>
+            <a href="{{ url_for('product_list') }}">View Products</a>
+            <a href="{{ url_for('sales_performance') }}">Sales Performance</a>
+            <a href="{{ url_for('lowstocks') }}">Low Stocks</a>
+            <a href="{{ url_for('feedback') }}">Feedback</a>
+            <a href="{{ url_for('improve_sales_resources') }}">Tips to improve your sales</a>
+            <a href="{{ url_for('add_employee') }}">Add Employee</a>
+            <a href="{{ url_for('view_employees') }}">View Employees</a>
+            <a href="{{ url_for('profit_and_loss') }}">Profit and Loss</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+            <!-- Links visible for unauthenticated users -->
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+        {% endif %}
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2023 Sales Performance Analyser</p>
+    </footer>
+</body>
+</html>

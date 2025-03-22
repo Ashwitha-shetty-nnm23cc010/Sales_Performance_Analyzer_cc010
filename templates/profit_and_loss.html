@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profit and Loss Calculator</title>
+</head>
+<body>
+    <h1>Profit and Loss Calculator</h1>
+
+    <form method="POST" action="/profit_and_loss">
+        <label for="total_sales">Total Sales (₹):</label>
+        <input type="number" id="total_sales" name="total_sales" step="0.01" required>
+        <br><br>
+
+        <label for="total_costs">Total Costs (₹):</label>
+        <input type="number" id="total_costs" name="total_costs" step="0.01" required>
+        <br><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if total_sales is not none and total_costs is not none %}
+        <h2>Results:</h2>
+        {% if profit_or_loss > 0 %}
+            <p>Profit: ₹{{ profit_or_loss }}</p>
+        {% elif profit_or_loss < 0 %}
+            <p>Loss: ₹{{ -profit_or_loss }}</p>
+        {% else %}
+            <p>No profit or loss.</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

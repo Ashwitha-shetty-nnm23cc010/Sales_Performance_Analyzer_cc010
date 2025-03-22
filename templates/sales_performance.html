@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Sales Performance</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Product ID</th>
+            <th>Salesperson ID</th>
+            <th>Customer ID</th>
+            <th>Sale Date</th>
+            <th>Quantity</th>
+            <th>Total Amount</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if sales %}
+        {% for sale in sales %}
+        <tr>
+            <td>{{ sale.product_name }}</td>
+            <td>{{ sale.product_id }}</td>
+            <td>{{ sale.salesperson_id }}</td>
+            <td>{{ sale.customer_id }}</td>
+            <td>{{ sale.sale_date }}</td>
+            <td>{{ sale.quantity }}</td>
+            <td>{{ sale.total_amount }}</td>
+            <td>{{ sale.amount }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+            <td colspan="8">No sales data available.</td>
+        </tr>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}
