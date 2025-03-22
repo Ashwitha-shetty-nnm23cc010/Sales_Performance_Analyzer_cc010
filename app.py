@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from flask_mail import Mail, Message
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
-import openai
+#import openai
 import requests  # Add this import for sending SMS
 
 app = Flask(__name__)
